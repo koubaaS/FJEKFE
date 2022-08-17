@@ -11,7 +11,17 @@ export class RestaurantsService {
     return this.http.get<Restaurants[]>('http://localhost:8080/restaurant');
   }
 
+  getById(id: number) {
+    return this.http.get<Restaurants>(`http://localhost:8080/restaurant/${id}`);
+   }
+
   create(r: Restaurants) {
     return this.http.post<Restaurants>('http://localhost:8080/restaurant', r);
   }
+
+  update(r: Restaurants) {
+    return this.http.put<Restaurants>('http://localhost:8080/restaurant', r);
+  }
+
+
 }
